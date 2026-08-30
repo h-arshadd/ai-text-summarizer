@@ -1,7 +1,7 @@
 from pypdf import PdfReader
 from preprocessing import clean_text
 from chunking import chunk_text
-from summarizer import summarize_chunks
+from summarizer import summarize_chunks, create_final_summary
 
 
 def extract_text_from_pdf(pdf_path):
@@ -42,3 +42,8 @@ if __name__ == "__main__":
         print(f"SUMMARY {i + 1}:")
         print(summary)
         print()
+
+    final_summary = create_final_summary(summaries)
+
+    print("FINAL SUMMARY:")
+    print(final_summary)

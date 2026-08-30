@@ -35,3 +35,9 @@ def summarize_chunks(chunks):
         summaries.append(summary)
 
     return summaries
+
+
+def create_final_summary(summaries):
+    combined_text = " ".join(summaries)
+
+    return summarize_text(combined_text)
