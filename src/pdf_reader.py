@@ -1,11 +1,8 @@
 from pypdf import PdfReader
-from preprocessing import clean_text
-from chunking import chunk_text
-from summarizer import summarize_chunks, create_final_summary
 
 
-def extract_text_from_pdf(pdf_path):
-    reader = PdfReader(pdf_path)
+def extract_text_from_pdf(pdf_file):
+    reader = PdfReader(pdf_file)
 
     text = ""
 
@@ -19,6 +16,10 @@ def extract_text_from_pdf(pdf_path):
 
 
 if __name__ == "__main__":
+    from preprocessing import clean_text
+    from chunking import chunk_text
+    from summarizer import summarize_chunks, create_final_summary
+
     pdf_path = "data/sample.pdf"
 
     text = extract_text_from_pdf(pdf_path)
